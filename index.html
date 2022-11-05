@@ -14,7 +14,7 @@
 				<div class="absolute w-full h-14 bg-slate-200 opacity-80"></div>	
 				<div class="relative w-full md:w-6/12 md:mx-auto">
 					<div class="grid grid-cols-2 sm:hidden p-4">
-						<a class="block" href="index.html"><img src="img/logo.png" alt="logo" /></a>
+						<a class="block" href="/"><img src="img/logo.png" alt="logo" /></a>
 						<button class="flex justify-end" onclick="toggleNav()">
 							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -25,7 +25,7 @@
 						<ul class="grid grid-cols-1 sm:grid-cols-5 bg-white opacity-70 md:bg-transparent md:opacity-100">
 							<li class=""><a class="block hover:bg-slate-200 opacity-100 hover:opacity-80 p-4" href="#services">Services</a></li>
 							<li class=""><a class="block hover:bg-slate-200 opacity-100 hover:opacity-80 p-4" href="#portfolio">Portfolio</a></li>
-							<li class="hidden sm:block"><a class="block hover:bg-slate-200 opacity-100 hover:opacity-80 h-14 p-4 pt-5" href="index.html"><img class="mx-auto" src="img/logo.png" alt="logo" /></a></li>
+							<li class="hidden sm:block"><a class="block hover:bg-slate-200 opacity-100 hover:opacity-80 h-14 p-4 pt-5" href="/"><img class="mx-auto" src="img/logo.png" alt="logo" /></a></li>
 							<li class=""><a class="block hover:bg-slate-200 opacity-100 hover:opacity-80 p-4" href="#about">About</a></li>
 							<li class=""><a class="block hover:bg-slate-200 opacity-100 hover:opacity-80 p-4" href="#contact">Contact</a></li>
 						</ul>
@@ -172,12 +172,16 @@
 		</footer>
 		<script>
 			function toggleNav() {
-				var x = document.getElementById("main-nav");
-				if (x.className === "sm:block") {
-					x.className += " hidden";
+				var navBar = document.querySelector("#main-nav");
+				var navLink = document.querySelectorAll("#main-nav a");
+				if (navBar.className === "sm:block") {
+					navBar.className += " hidden";
 				} else {
-					x.className = "sm:block";
-				}		
+					navBar.className = "sm:block";
+				}
+				navLink.forEach(el => el.addEventListener("click", function(e) {
+					toggleNav();
+				}));
 			}
 			function printCopyrightYear() {
 				var x = document.getElementById("copyright-year");
