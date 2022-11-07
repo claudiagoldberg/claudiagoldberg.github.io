@@ -163,14 +163,11 @@
 		</section>
 		<footer class="bg-zinc-900">
 			<div class="max-w-screen-lg mx-auto px-4 py-6 text-white">
-				<div class="grid grid-cols-1">
-					<div>
-						<p class="text-zinc-600">&copy;<span id="copyright-year">2022</span> Claudia Goldberg</p>
-					</div>
-				</div>
+				<p class="text-zinc-600">&copy;<span id="copyright-year"></span> Claudia Goldberg</p>
 			</div>
 		</footer>
 		<script>
+			// Navbar
 			function toggleNav() {
 				var navBar = document.querySelector("#main-nav");
 				var navLink = document.querySelectorAll("#main-nav a");
@@ -183,10 +180,8 @@
 					toggleNav();
 				}));
 			}
-			function printCopyrightYear() {
-				var x = document.getElementById("copyright-year");
-				document.getElementById("year").innerHTML = new Date().getFullYear();
-			}
+			// Copyright
+			document.getElementById('copyright-year').innerHTML = (/\d{4}/.exec(Date())[0]);
 		</script>
 	</body>
 </html>
