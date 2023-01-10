@@ -24,9 +24,16 @@
 			.modal {
 				display: none;
 				position: fixed;
-				top: 50%; 
-				left: 50%; 
-				transform: translate(-50%, -50%);
+				top: 80px;
+				left: 0;
+				padding: 1em;
+			}
+			@media (min-width:768px) {
+				.modal {
+					top: 50%; 
+					left: 50%; 
+					transform: translate(-50%, -50%);
+				}
 			}
 			.modal-content {
 				position: relative;
