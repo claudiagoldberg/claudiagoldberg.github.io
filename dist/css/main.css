@@ -601,10 +601,6 @@ video {
   z-index: 0;
 }
 
-.m-7 {
-  margin: 1.75rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -623,16 +619,6 @@ video {
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
-}
-
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .my-5 {
@@ -680,14 +666,6 @@ video {
   height: 3rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
-.max-h-96 {
-  max-height: 24rem;
-}
-
 .max-h-80 {
   max-height: 20rem;
 }
@@ -706,6 +684,10 @@ video {
 
 .max-w-screen-lg {
   max-width: 1024px;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @-webkit-keyframes bounce {
@@ -773,22 +755,8 @@ video {
   scroll-behavior: smooth;
 }
 
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.overflow-ellipsis {
-  text-overflow: ellipsis;
-}
-
 .text-ellipsis {
   text-overflow: ellipsis;
-}
-
-.whitespace-nowrap {
-  white-space: nowrap;
 }
 
 .rounded-full {
