@@ -8,104 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="dist/css/main.css">
 		<style>
-			#overlay {
-				display: none;
-				position: absolute;
-				z-index: 0;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				background-color: rgba(0, 0, 0, 0.7);
-			}
-			.preview {
-				width: 100%;
-			}
-			.modal {
-				display: none;
-				position: fixed;
-				top: 80px;
-				left: 0;
-				padding: 1em;
-			}
 			@media (min-width:768px) {
 				.modal {
-					top: 50%; 
-					left: 50%; 
 					transform: translate(-50%, -50%);
 				}
 			}
-			.modal-content {
-				position: relative;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				margin: auto;
-				padding: 0 0 0 0;
-				max-width: 1024px;
-			}
 			.slide {
-				display: none;
-				position: relative;
-				max-height: 500px;
-			}
-			.slide > div {
-				background: white; 
-				/* width: 50%; */
-				overflow:hidden;
-			}
-			/* .slide > div:last-child {
-				padding: 20px 30px;
-			} */
-			.image-slide {
-				width: 100%;
-			}
-			.modal-preview {
-				width: 100%;
-			}
-			.dots {
-				display: none;
-			}
-			.close {
-				z-index: 1;
-				color: #666;
-				position: absolute;
-				top: 0px;
-				right: 15px;
-				font-size: 35px;
-				font-weight: bold;
-			}
-			.close:hover,
-			.close:focus,
-			.previous:hover,
-			.next:hover,
-			.previous:focus,
-			.next:focus {
-				color: #999;
-				text-decoration: none;
-				cursor: pointer;
-			}
-			.previous,
-			.next {
-				cursor: pointer;
-				position: absolute;
-				display: flex;
-				align-items: center;
-				top: 0;
-				height: 100%;
-				width: auto;
-				padding: 16px;
-				color: #666;
-				font-weight: bold;
-				font-size: 20px;
-				transition: 0.6s ease;
-				border-radius: 0 3px 3px 0;
-				user-select: none;
-				-webkit-user-select: none;
-			}
-			.next {
-				right: 0;
-				border-radius: 3px 0 0 3px;
+				max-height: 550px;
 			}
 		</style>
 	</head>
@@ -222,17 +131,17 @@
 			<div class="max-w-screen-lg mx-auto px-4 py-16">
 				<h2 class="text-3xl pb-12">Portfolio</h2>
 				<div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 pt -6">
-					<div class="bg-white rounded-sm shadow-md hover:shadow-lg hover:scale-105 transition-all">
-						<div onclick="openLightbox();toSlide(1)" class="preview" href="#modal-1" rel="modal:open"><img class="w-full" src="assets/img/website_sevilleCapital_thumb.png" alt="Screenshot of the Seville Capital website homepage taken on February 13, 2019"/></div>
+					<div class="cursor-pointer bg-white rounded-sm shadow-md hover:shadow-lg hover:scale-105 transition-all">
+						<div onclick="openLightbox();toSlide(1)" class="w-full" href="#modal-1" rel="modal:open"><img class="w-full" src="assets/img/website_sevilleCapital_thumb.png" alt="Screenshot of the Seville Capital website homepage taken on February 13, 2019"/></div>
 					</div>
-					<div class="bg-white rounded-sm shadow-md hover:shadow-lg hover:scale-105 transition-all">
-						<div onclick="openLightbox();toSlide(2)" class="preview" href="#modal-2" rel="modal:open"><img class="w-full" src="assets/img/website_vandoSalon_thumb.png" alt="Screenshot of the V and O Salon Website homepage taken on February 13, 2019"/></div>
+					<div class="cursor-pointer bg-white rounded-sm shadow-md hover:shadow-lg hover:scale-105 transition-all">
+						<div onclick="openLightbox();toSlide(2)" class="w-full" href="#modal-2" rel="modal:open"><img class="w-full" src="assets/img/website_vandoSalon_thumb.png" alt="Screenshot of the V and O Salon Website homepage taken on February 13, 2019"/></div>
 					</div>
-					<div class="bg-white rounded-sm shadow-md hover:shadow-lg hover:scale-105 transition-all">
-						<div onclick="openLightbox();toSlide(3)" class="preview" href="#modal-3" rel="modal:open"><img class="w-full" src="assets/img/website_samPatchMusic_thumb.png" alt="Screenshot of the Sam Patch Music website homepage taken on February 13, 2019"/></div>
+					<div class="cursor-pointer bg-white rounded-sm shadow-md hover:shadow-lg hover:scale-105 transition-all">
+						<div onclick="openLightbox();toSlide(3)" class="w-full" href="#modal-3" rel="modal:open"><img class="w-full" src="assets/img/website_samPatchMusic_thumb.png" alt="Screenshot of the Sam Patch Music website homepage taken on February 13, 2019"/></div>
 					</div>
-					<div class="bg-white rounded-sm shadow-md hover:shadow-lg hover:scale-105 transition-all">
-						<div onclick="openLightbox();toSlide(4)" class="preview" href="#modal-4" rel="modal:open"><img class="w-full" src="assets/img/website_cliniqueCME_thumb.png" alt="Screenshot of the Clinique CME website homepage taken on February 13, 2019"/></div>
+					<div class="cursor-pointer bg-white rounded-sm shadow-md hover:shadow-lg hover:scale-105 transition-all">
+						<div onclick="openLightbox();toSlide(4)" class="w-full" href="#modal-4" rel="modal:open"><img class="w-full" src="assets/img/website_cliniqueCME_thumb.png" alt="Screenshot of the Clinique CME website homepage taken on February 13, 2019"/></div>
 					</div>
 				</div>
 			</div>
@@ -277,13 +186,13 @@
 			</div>
 		</footer>
 		
-		<div id="overlay" onclick="closeLightbox()"></div>
-		<div id="lightbox" class="modal text-left">
-			<div class="modal-content">
-				<span class="close pointer transition-all" onclick="closeLightbox()">&times;</span>
-				<div class="slide">
-					<div>
-						<img class="image-slide" src="assets/img/website_sevilleCapital.png" alt="Screenshot of the Seville Capital website homepage taken on February 13, 2019" />
+		<div id="overlay" onclick="closeLightbox()" class="hidden absolute z-0 top-0 left-0 w-full h-full bg-slate-900 opacity-70"></div>
+		<div id="lightbox" class="modal hidden fixed top-0 left-0 md:top-1/2 md:left-1/2 mt-20 md:mt-7 p-1 text-left">
+			<div class="relative flex flex-col justify-center m-auto p-0 max-w-5xl">
+				<span class="close cursor-pointer absolute z-10 top-0 right-4 text-4xl font-bold text-slate-500 hover:text-slate-400 transition-all" onclick="closeLightbox()">&times;</span>
+				<div class="slide hidden relative">
+					<div class="bg-white overflow-hidden">
+						<img class="w-full" src="assets/img/website_sevilleCapital.png" alt="Screenshot of the Seville Capital website homepage taken on February 13, 2019" />
 					</div>
 					<!-- <div class="relative">
 						<div class="max-h-80 display text-ellipsis overflow-hidden">
@@ -297,9 +206,9 @@
 						</div>
 					</div> -->
 				</div>
-				<div class="slide">
-					<div>
-						<img class="image-slide" src="assets/img/website_vandoSalon.png" alt="Screenshot of the V and O Salon Website homepage taken on February 13, 2019" />
+				<div class="slide hidden relative">
+					<div class="bg-white overflow-hidden">
+						<img class="w-full" src="assets/img/website_vandoSalon.png" alt="Screenshot of the V and O Salon Website homepage taken on February 13, 2019" />
 					</div>
 					<!-- <div class="relative">
 						<div class="max-h-80 display text-ellipsis overflow-hidden">
@@ -313,9 +222,9 @@
 						</div>
 					</div> -->
 				</div>
-				<div class="slide">
-					<div>
-						<img class="image-slide" src="assets/img/website_samPatchMusic.png" alt="Screenshot of the Sam Patch Music website homepage taken on February 13, 2019" />
+				<div class="slide hidden relative">
+					<div class="bg-white overflow-hidden">
+						<img class="w-full" src="assets/img/website_samPatchMusic.png" alt="Screenshot of the Sam Patch Music website homepage taken on February 13, 2019" />
 					</div>
 					<!-- <div class="relative">
 						<div class="max-h-80 display text-ellipsis overflow-hidden">
@@ -329,9 +238,9 @@
 						</div>
 					</div> -->
 				</div>
-				<div class="slide">
-					<div>
-						<img  class="image-slide"src="assets/img/website_cliniqueCME.png" alt="Screenshot of the Clinique CME website homepage taken on February 13, 2019" />
+				<div class="slide hidden relative">
+					<div class="bg-white overflow-hidden">
+						<img  class="w-full"src="assets/img/website_cliniqueCME.png" alt="Screenshot of the Clinique CME website homepage taken on February 13, 2019" />
 					</div>
 					<!-- <div class="relative">
 						<div class="max-h-80 display text-ellipsis overflow-hidden">
@@ -345,25 +254,8 @@
 						</div>
 					</div> -->
 				</div>
-			
-				<a class="previous transition-all" onclick="changeSlide(-1)"><span>&#10094;</span></a>
-				<a class="next transition-all" onclick="changeSlide(1)"><span>&#10095;</span></a>
-			
-				<div class="dots">
-					<div class="col">
-						<div class="modal-preview text-white" onclick="toSlide(1)">X</div>
-					</div>
-					<div class="col">
-						<div class="modal-preview text-white" onclick="toSlide(2)">X</div>
-					</div>
-					<div class="col">
-						<div class="modal-preview text-white" onclick="toSlide(3)">X</div>
-					</div>
-					<div class="col">
-						<div class="modal-preview text-white" onclick="toSlide(4)">X</div>
-					</div>
-				</div>
-
+				<a class="previous cursor-pointer absolute left-0 top-0 h-full w-auto p-4 flex items-center text-xl font-bold text-slate-500 hover:text-slate-400 transition-all select-none" onclick="changeSlide(-1)"><span>&#10094;</span></a>
+				<a class="next cursor-pointer absolute right-0 top-0 h-full w-auto p-4 flex items-center text-xl font-bold text-slate-500 hover:text-slate-400 transition-all select-none" onclick="changeSlide(1)"><span>&#10095;</span></a>
 			</div>
 		</div>
 
@@ -407,27 +299,17 @@
 			}
 
 			function showSlide(n) {
-
-			const slides = document.getElementsByClassName('slide');
-			let modalPreviews = document.getElementsByClassName('modal-preview');
-
-			if (n > slides.length) {
-				slideIndex = 1;	
-			}
-			
-			if (n < 1) {
-				slideIndex = slides.length;
-			}
-
-			for (let i = 0; i < slides.length; i++) {
-				slides[i].style.display = "none";
-			}
-			for (let i = 0; i < modalPreviews.length; i++) {
-				modalPreviews[i].className = modalPreviews[i].className.replace(' active', '');
-			}
-			
-			slides[slideIndex - 1].style.display = 'flex';
-			modalPreviews[slideIndex - 1].className += ' active';
+				const slides = document.getElementsByClassName('slide');
+				if (n > slides.length) {
+					slideIndex = 1;	
+				}
+				if (n < 1) {
+					slideIndex = slides.length;
+				}
+				for (let i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				slides[slideIndex - 1].style.display = 'flex';
 			}
 		</script>
 	</body>
